@@ -1,0 +1,41 @@
+
+<div class="container center">
+<div class="h1"><h1>School Managment System</h1></div>
+
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" >
+  <label>Enter student name :</label>
+  <input type="text" name="name" required ngModel #name="ngModel" placeholder="name"><br><br>
+  <div class="error" *ngIf="name.invalid && name.touched">Name is required</div>
+  <label>Enter student ID :</label>
+  <input type="number" name="id" required ngModel #id="ngModel" placeholder="id"><br><br>
+  <div class="error" *ngIf="id.invalid && id.touched">ID is required</div>
+  <label>Enter student GPA :</label>
+  <input type="number" name="Gpa" required ngModel #Gpa="ngModel" placeholder="Gpa"><br><br>
+  <div class="error" *ngIf="Gpa.invalid && Gpa.touched">Gpa is required</div>
+  Ps : You must fill in all feald until the submit buttun appears <br><br>
+  <button type="submit" *ngIf="!Gpa.invalid && !id.invalid && !name.invalid">submit</button>
+</form>
+
+<div class="container center h1">
+ <button (click)="getData()" style="margin-top:10px ;  margin-bottom: 10px;">Show List</button></div>
+<div class="slist">
+ 
+
+<table class="table"> 
+  
+  <tr>
+    <th>Student Name </th>
+    <th>Student ID</th>
+    <th>Student Gpa</th>
+
+  </tr>
+  <tr *ngFor="let item of dat">
+    <td>{{item.name}}</td>
+    <td>{{item.id}}</td>
+    <td>{{item.Gpa}}</td>
+
+  </tr>
+</table>
+</div>
+</div>
+   
