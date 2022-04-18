@@ -1,1 +1,1 @@
-# schoolMS
+# SchoolManagementSystem-AngularApp
